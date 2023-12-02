@@ -926,9 +926,6 @@
         "show_line_separator": {
           "label": "Näytä erotinviiva"
         },
-        "margin_bottom": {
-          "label": "Alareunus"
-        },
         "menu_type_desktop": {
           "label": "Pöytäkoneen valikkotyyppi",
           "info": "Valikkotyyppi optimoidaan automaattisesti mobiililaitteilla.",

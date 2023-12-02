@@ -926,9 +926,6 @@
         "show_line_separator": {
           "label": "Hiển thị đường phân cách"
         },
-        "margin_bottom": {
-          "label": "Lề dưới"
-        },
         "menu_type_desktop": {
           "label": "Loại menu trên màn hình nền",
           "info": "Loại menu được tự động tối ưu hóa cho thiết bị di động.",

@@ -926,9 +926,6 @@
         "show_line_separator": {
           "label": "Mostra linea di separazione"
         },
-        "margin_bottom": {
-          "label": "Margine inferiore"
-        },
         "menu_type_desktop": {
           "label": "Tipo menu desktop",
           "info": "Tipo menu automaticamente ottimizzato per dispositivi mobili.",

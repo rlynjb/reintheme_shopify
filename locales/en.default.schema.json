@@ -1122,9 +1122,6 @@
         "enable_language_selector": {
           "label": "Enable language selector"
         },
-        "margin_bottom": {
-          "label": "Bottom margin"
-        },
         "mobile_layout": {
           "content": "Mobile layout"
         },

@@ -926,9 +926,6 @@
         "show_line_separator": {
           "label": "Ayırıcı satırı göster"
         },
-        "margin_bottom": {
-          "label": "Alt kenar boşluğu"
-        },
         "menu_type_desktop": {
           "label": "Masaüstü menü türü",
           "info": "Menü türü, mobil cihazlar için otomatik olarak optimize edilir.",
