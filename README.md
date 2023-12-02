@@ -1,3 +1,30 @@
+# Shopify Reintheme
+
+## Technical specs
+- replace Dawn theme CSS with TailwindCSS for a lightweight and easy update
+- replace Dawn theme icons with hero icons svg
+- replace Dawn theme javascript with es6 code
+- replace Dawn theme CSS animation/transition with TailwindCSS animation css or check other 3rd party library
+
+### TODOs
+1. ~~Gather requirements~~ [https://shopify.dev/docs/themes/store/requirements]
+2. ~~Create a Use Case~~
+3. Convert the Use Case to the development plan (Class, Sequence, Activity diagrams, etc)
+4. Plan out MVP (foundation and requirements of Shopify theme)
+5. Build a blank slate theme first
+6. Implement Design Principles for Merchant and Customer experience (What makes my theme unique) [https://shopify.dev/docs/themes/best-practices/design]
+7. Research some other niche features (it will depend on industry)
+
+## Set up local dev
+- when setting up local dev initially and installing required dependencies. I came across Ruby version issue.
+Repro steps:
+1. Run `shopify theme dev --store {store-name}` https://shopify.dev/docs/themes/getting-started/create
+2. Getting Ruby version error. Fix: https://stackoverflow.com/questions/10940736/rbenv-not-changing-ruby-version
+3. Check which shell you are using and then apply export PATH...
+4. Add Github repo to Shopify Themes Library by going to `Themes > Theme library > Add theme > Connect from Github`
+
+--------------------------------
+
 # Dawn
 
 [![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
