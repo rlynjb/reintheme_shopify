@@ -240,19 +240,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.9/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /**
-        Global styles
-        TODO: transfer to assets/global.css
-      */
-      svg.icon {
-        width: 100%;
-        max-width: 2em;
-      }
-      svg {
-        width: 100%;
-      }
-    </style>
+    <link type="text/css" href="{{ 'main.css' | asset_url }}" rel="stylesheet">
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
