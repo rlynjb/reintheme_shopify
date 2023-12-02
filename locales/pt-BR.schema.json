@@ -372,11 +372,6 @@
   },
   "sections": {
     "all": {
-      "padding": {
-        "section_padding_heading": "Preenchimento da seção",
-        "padding_top": "Preenchimento superior",
-        "padding_bottom": "Preenchimento inferior"
-      },
       "spacing": "Espaçamento",
       "colors": {
         "label": "Esquema de cores",

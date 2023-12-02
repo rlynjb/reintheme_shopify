@@ -372,11 +372,6 @@
   },
   "sections": {
     "all": {
-      "padding": {
-        "section_padding_heading": "Vnitřní okraj sekce",
-        "padding_top": "Horní vnitřní okraj",
-        "padding_bottom": "Dolní vnitřní okraj"
-      },
       "spacing": "Rozestupy",
       "colors": {
         "label": "Barevné schéma",

@@ -3,8 +3,6 @@
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "cart-footer": {
@@ -41,9 +39,7 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "columns_mobile": "2"
       }
     }
   },

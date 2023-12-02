@@ -372,11 +372,6 @@
   },
   "sections": {
     "all": {
-      "padding": {
-        "section_padding_heading": "Dopełnienie sekcji",
-        "padding_top": "Dopełnienie na górze",
-        "padding_bottom": "Dopełnienie na dole"
-      },
       "spacing": "Odstępy",
       "colors": {
         "label": "Kolorystyka",

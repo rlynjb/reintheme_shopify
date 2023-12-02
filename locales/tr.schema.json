@@ -372,11 +372,6 @@
   },
   "sections": {
     "all": {
-      "padding": {
-        "section_padding_heading": "Bölüm dolgusu",
-        "padding_top": "Üst dolgu",
-        "padding_bottom": "Alt dolgu"
-      },
       "spacing": "Boşluk",
       "colors": {
         "label": "Renk şeması",

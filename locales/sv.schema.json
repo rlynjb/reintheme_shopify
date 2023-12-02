@@ -372,11 +372,6 @@
   },
   "sections": {
     "all": {
-      "padding": {
-        "section_padding_heading": "Padding för avsnitt",
-        "padding_top": "Övre padding",
-        "padding_bottom": "Nedre padding"
-      },
       "spacing": "Radavstånd",
       "colors": {
         "label": "Färgschema",

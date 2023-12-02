@@ -372,11 +372,6 @@
   },
   "sections": {
     "all": {
-      "padding": {
-        "section_padding_heading": "分区填充",
-        "padding_top": "顶部填充",
-        "padding_bottom": "底部填充"
-      },
       "spacing": "间距",
       "colors": {
         "label": "配色方案",
