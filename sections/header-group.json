@@ -13,10 +13,20 @@
             "color_scheme": "scheme-1",
             "link": ""
           }
+        },
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "2nd msg",
+            "text_alignment": "center",
+            "color_scheme": "scheme-1",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement-bar-1"
       ]
     },
     "header": {
