@@ -11,16 +11,16 @@
             "text": "Welcome to our store",
             "text_alignment": "center",
             "color_scheme": "scheme-1",
-            "link": ""
+            "link": "http://ss.com"
           }
         },
         "announcement-bar-1": {
           "type": "announcement",
           "settings": {
-            "text": "2nd msg",
+            "text": "Check out our new product",
             "text_alignment": "center",
             "color_scheme": "scheme-1",
-            "link": ""
+            "link": "http://dadasd.com"
           }
         }
       },

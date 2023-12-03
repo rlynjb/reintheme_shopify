@@ -17,6 +17,7 @@ Theme Settings:
 
 TODO:
 - allow disable of slideshow arrows
+- rewrite slideshow-component and move to `assets/components/` (build a UI ecommerce design system)
 - DONE: if social icons is enabled, show icons regardless its empty or not
 - remove Social Media Link fields in Announcement Bar settings
 - remove Custom CSS box
@@ -64,7 +65,7 @@ TODO:
             <a href="{{ section.blocks.first.settings.link }}">
               <p>
                 <span>{{ section.blocks.first.settings.text | escape }}</span>
-                {% render 'icon-arrow' %}
+                <span class="inline-block align-bottom ml-2">{% render 'icon-arrow' %}</span>
               </p>
             </a>
 
@@ -95,7 +96,7 @@ TODO:
             {% render 'icon-caret' %}
           </button>
           <div
-            class="grid grid-cols-1 slider slider--everywhere"
+            class="slider slider--everywhere"
             id="Slider-{{ section.id }}"
             aria-live="polite"
             aria-atomic="true"
@@ -120,20 +121,19 @@ TODO:
                 >
                   {%- if block.settings.text != blank -%}
                     {%- if block.settings.link != blank -%}
-                      <a
-                        href="{{ block.settings.link }}"
-                        class="announcement-bar__link link link--text focus-inset animate-arrow"
-                      >
-                    {%- endif -%}
-                    <p class="announcement-bar__message h5">
-                      <span>{{ block.settings.text | escape }}</span>
-                      {%- if block.settings.link != blank -%}
-                        {% render 'icon-arrow' %}
-                      {%- endif -%}
-                    </p>
-                    {%- if block.settings.link != blank -%}
+                      <a href="{{ block.settings.link }}">
+                        <p>
+                          <span>{{ block.settings.text | escape }}</span>
+                          <span class="inline-block align-bottom ml-2">{% render 'icon-arrow' %}</span>
+                        </p>
                       </a>
-                    {%- endif -%}
+
+                    {%- else -%}
+
+                      <p>
+                        <span>{{ block.settings.text | escape }}</span>
+                      </p>
+                    {% endif  %}
                   {%- endif -%}
                 </div>
               </div>
@@ -150,6 +150,7 @@ TODO:
           </button>
         </div>
       </slideshow-component>
+
       {%- if request.design_mode -%}
         <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
         <style>
