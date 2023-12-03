@@ -17,6 +17,7 @@ Theme Settings:
 
 Improve features:
 - allow disable of slideshow arrows
+- if social icons is enabled, show icons regardless its empty or not
 
 {% endcomment %}
 
@@ -35,17 +36,17 @@ Improve features:
 
 <div
   class="utility-bar color-{{ section.settings.color_scheme }}
-    {% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border
-    {% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only
-    {% endif %}
-    {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization
-    {% endif %}"
+    {% if section.settings.show_line_separator and section.blocks.size > 0 %} border-b-[2px] border-b-indigo-500{% endif %}
+    {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
   {{ block.shopify_attributes }}
 >
-  <div class="page-width">
+  <div class="container mx-auto p-3">
     {%- if section.settings.show_social and social_icons -%}
       {%- render 'social-icons' -%}
+    {%- elsif section.settings.show_social -%}
+      add social links on Theme Settings
     {%- endif -%}
+
     {%- if section.blocks.size == 1 -%}
       <div
         class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
@@ -267,7 +268,7 @@ Improve features:
     {
       "type": "checkbox",
       "id": "show_social",
-      "default": false,
+      "default": true,
       "label": "t:sections.announcement-bar.settings.show_social.label"
     },
     {
