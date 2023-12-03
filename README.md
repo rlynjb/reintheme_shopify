@@ -2,9 +2,13 @@
 
 ## Technical specs
 - replace Dawn theme CSS with TailwindCSS for a lightweight and easy update
-- replace Dawn theme icons with hero icons svg
-- replace Dawn theme javascript with es6 code
-- replace Dawn theme CSS animation/transition with TailwindCSS animation css or check other 3rd party library
+  - clean up /sections by:
+    - determine Features, Settings
+    - what else can improve? add/remove features
+- move code to its own Section or Snippet liquid file
+- move general code under `assets/` global js file
+- add CSS animation/transition with TailwindCSS animation css
+- set default and available Themes under `/config/*`
 
 ### TODOs
 1. ~~Gather requirements~~ [https://shopify.dev/docs/themes/store/requirements]
