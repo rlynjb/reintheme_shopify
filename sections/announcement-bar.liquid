@@ -17,7 +17,10 @@ Theme Settings:
 
 TODO:
 - allow disable of slideshow arrows
-- rewrite slideshow-component and move to `assets/components/` (build a UI ecommerce design system)
+- rewrite slideshow-component and move to `assets/components/`
+  - build a UI ecommerce design system
+  - check out HTML Web Components
+  - probably mix it up with React components
 - DONE: if social icons is enabled, show icons regardless its empty or not
 - remove Social Media Link fields in Announcement Bar settings
 - remove Custom CSS box
@@ -79,24 +82,51 @@ TODO:
       </div>
 
     {%- elsif section.blocks.size > 1 -%}
+      <r-slideshow>
+        <span
+          slot="prev-btn"
+          class="kirbytest inline-block mr-4 rotate-90 align-super"
+        >
+          {% render 'icon-caret' %}
+        </span>
+
+        <div slot="content">
+          {%- for block in section.blocks -%}
+            <p>
+              {{ block.settings.text | escape }}
+            </p>
+          {%- endfor -%}
+        </div>
+
+        <span
+          slot="next-btn"
+          class="inline-block ml-4 -rotate-90 align-super"
+        >
+          {% render 'icon-caret' %}
+        </span>
+      </r-slideshow>
+
       <slideshow-component
         class="announcement-bar"
         role="region"
         aria-roledescription="{{ 'sections.announcements.carousel' | t }}"
         aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
       >
-        <div class="announcement-bar-slider slider-buttons">
+        <div class="announcement-bar-slider">
+          <!-- NOTE: this next button can be move inside SlideshowComponent -->
           <button
             type="button"
-            class="slider-button slider-button--prev"
+            class="prev-btn inline-block mr-4 rotate-90 align-super"
             name="previous"
             aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
             {% render 'icon-caret' %}
           </button>
+
+          <!-- NOTE: convert this into a slot -->
           <div
-            class="slider slider--everywhere"
+            class="content inline-block"
             id="Slider-{{ section.id }}"
             aria-live="polite"
             aria-atomic="true"
@@ -139,9 +169,11 @@ TODO:
               </div>
             {%- endfor -%}
           </div>
+
+          <!-- NOTE: this prev button can be move inside SlideshowComponent -->
           <button
             type="button"
-            class="slider-button slider-button--next"
+            class="next-btn inline-block ml-4 -rotate-90 align-super"
             name="next"
             aria-label="{{ 'sections.announcements.next_announcement' | t }}"
             aria-controls="Slider-{{ section.id }}"

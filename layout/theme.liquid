@@ -31,6 +31,7 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -241,6 +242,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.9/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link type="text/css" href="{{ 'main.css' | asset_url }}" rel="stylesheet">
+
+    <script src="{{ 'r-slideshow.js' | asset_url }}" defer="defer"></script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
