@@ -143,16 +143,16 @@ Features:
       <!-- HEADER LOGO LAYOUT 'top-center' -->
       {%- if section.settings.logo_position == 'top-center' -%}
         <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
-          <div class="col-span-1">
+          <div class="">
             search
           </div>
-          <div class="col-span-1">
+          <div class="col-start-6 col-end-8 text-center">
             {% render 'logo' %}
           </div>
-          <div class="col-span-1">
+          <div class="col-start-9 col-end-12 justify-self-end">
             currency selector, cart
           </div>
-          <div class="col-span-3">
+          <div class="col-span-12 text-center">
             menu
           </div>
         </div>
