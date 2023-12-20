@@ -88,7 +88,7 @@ Features:
 
       <!-- HEADER LOGO LAYOUT 'middle-left' -->
       {%- if section.settings.logo_position == 'middle-left' -%}
-        <div class="grid grid-cols-12 min-h-20 place-items-center">
+        <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
           <div>
             {% render 'logo' %}
           </div>
@@ -106,11 +106,11 @@ Features:
 
       <!-- HEADER LOGO LAYOUT 'middle-center' -->
       {%- if section.settings.logo_position == 'middle-center' -%}
-        <div class="grid grid-cols-12 min-h-20 place-items-center">
+        <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
           <div>
             menu
           </div>
-          <div class="col-start-5">
+          <div class="col-start-6 col-end-7 text-center">
             {% render 'logo' %}
           </div>
           <div class="col-start-9 col-end-12 justify-self-end">
@@ -124,14 +124,14 @@ Features:
 
       <!-- HEADER LOGO LAYOUT 'top-left' -->
       {%- if section.settings.logo_position == 'top-left' -%}
-        <div class="grid grid-cols-12 min-h-20 place-items-center">
-          <div class="col-span-1">
+        <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
+          <div class="col-auto justify-self-start">
             {% render 'logo' %}
           </div>
-          <div class="col-span-2">
+          <div class="col-start-9 col-end-12 justify-self-end">
             currency selector, search, cart
           </div>
-          <div class="col-span-3">
+          <div class="col-span-full justify-self-start">
             menu
           </div>
         </div>
@@ -142,7 +142,7 @@ Features:
 
       <!-- HEADER LOGO LAYOUT 'top-center' -->
       {%- if section.settings.logo_position == 'top-center' -%}
-        <div class="grid grid-cols-12 min-h-20 place-items-center">
+        <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
           <div class="col-span-1">
             search
           </div>
