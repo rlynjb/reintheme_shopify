@@ -85,18 +85,48 @@ Features:
     -->
 
     <div class="container mx-auto">
-
       <!-- HEADER LOGO LAYOUT 'middle-left' -->
       {%- if section.settings.logo_position == 'middle-left' -%}
         <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
           <div>
             {% render 'logo' %}
           </div>
-          <div>
-            menu
+
+          <div class="col-start-2 col-end-6">
+            {%- liquid
+              if section.settings.menu != blank
+                if section.settings.menu_type_desktop == 'dropdown'
+                  render 'header-dropdown-menu'
+                elsif section.settings.menu_type_desktop != 'drawer'
+                  render 'header-mega-menu'
+                endif
+              endif
+            %}
           </div>
+
           <div class="col-start-9 col-end-12 justify-self-end">
-            currency selector, search, cart
+            {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+              <localization-form class="small-hide medium-hide no-js-hidden">
+                {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                  <div>
+                    <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                    {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                  </div>
+                {%- endform -%}
+              </localization-form>
+            {% endif %}
+  
+            {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+              <localization-form class="small-hide medium-hide no-js-hidden">
+                {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+                  <div>
+                    <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                    {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+                  </div>
+                {%- endform -%}
+              </localization-form>
+            {%- endif -%}
+            search, cart
           </div>
         </div>
       {%- endif -%}
@@ -108,8 +138,15 @@ Features:
       {%- if section.settings.logo_position == 'middle-center' -%}
         <div class="grid grid-cols-12 min-h-24 h-full place-items-center pt-4 pb-4 gap-4">
           <div>
-            menu
-          </div>
+            {%- liquid
+              if section.settings.menu != blank
+                if section.settings.menu_type_desktop == 'dropdown'
+                  render 'header-dropdown-menu'
+                elsif section.settings.menu_type_desktop != 'drawer'
+                  render 'header-mega-menu'
+                endif
+              endif
+            %}          </div>
           <div class="col-start-6 col-end-7 text-center">
             {% render 'logo' %}
           </div>
@@ -132,8 +169,15 @@ Features:
             currency selector, search, cart
           </div>
           <div class="col-span-12 justify-self-start">
-            menu
-          </div>
+            {%- liquid
+              if section.settings.menu != blank
+                if section.settings.menu_type_desktop == 'dropdown'
+                  render 'header-dropdown-menu'
+                elsif section.settings.menu_type_desktop != 'drawer'
+                  render 'header-mega-menu'
+                endif
+              endif
+            %}          </div>
         </div>
       {%- endif -%}
       <!-- end - HEADER LOGO LAYOUT 'top-left' -->
@@ -174,23 +218,6 @@ Features:
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <noscript class="small-hide medium-hide">
-            {%- form 'localization', id: 'HeaderCountryMobileFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderCountryMobileLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select class="localization-selector link" name="country_code" aria-labelledby="HeaderCountryMobileLabelNoScript">
-                  {%- for country in localization.available_countries -%}
-                    <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
-                      {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
           <localization-form class="small-hide medium-hide no-js-hidden">
             {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
               <div>
@@ -202,23 +229,6 @@ Features:
         {% endif %}
 
         {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript class="small-hide medium-hide">
-            {%- form 'localization', id: 'HeaderLanguageMobileFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScript">{{ 'localization.language_label' | t }}</h2>
-                <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageMobileLabelNoScript">
-                  {%- for language in localization.available_languages -%}
-                    <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
           <localization-form class="small-hide medium-hide no-js-hidden">
             {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
               <div>
