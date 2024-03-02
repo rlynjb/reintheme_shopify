@@ -22,7 +22,7 @@
 {%- endcapture -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
+  <div class="container mx-auto video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
     <div
       {% if section.settings.full_width %}
         class="page-width"
@@ -73,7 +73,7 @@
     >
       <button
         id="Deferred-Poster-Modal-{{ video_id }}"
-        class="video-section__poster media deferred-media__poster media--landscape"
+        class="video-section__poster media deferred-media__poster media--landscape w-full relative"
         type="button"
         aria-label="{{ alt }}"
       >
@@ -86,7 +86,7 @@
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
-        <span class="deferred-media__poster-button motion-reduce">
+        <span class="deferred-media__poster-button motion-reduce absolute top-2/4 left-1/2">
           {%- render 'icon-play' -%}
         </span>
       </button>
